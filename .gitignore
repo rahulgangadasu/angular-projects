@@ -1,0 +1,13 @@
+Docs/
+
+first-angular-app/.vscode/
+first-angular-app/node_modules/
+first-angular-app/public/
+first-angular-app/.editorconfig
+first-angular-app/.prettierrc
+first-angular-app/package-lock.json
+first-angular-app/package.json
+first-angular-app/README.md
+first-angular-app/tsconfig.json
+first-angular-app/angular.json
+first-angular-app/tsconfig.spec.json
