@@ -1,13 +1,13 @@
 Docs/
 
-first-angular-app/.vscode/
-first-angular-app/node_modules/
-first-angular-app/public/
-first-angular-app/.editorconfig
-first-angular-app/.prettierrc
-first-angular-app/package-lock.json
-first-angular-app/package.json
-first-angular-app/README.md
-first-angular-app/tsconfig.json
-first-angular-app/tsconfig.spec.json
-first-angular-app/.angular/
+task-management-app/.vscode/
+task-management-app/node_modules/
+task-management-app/public/
+task-management-app/.editorconfig
+task-management-app/.prettierrc
+task-management-app/package-lock.json
+task-management-app/package.json
+task-management-app/README.md
+task-management-app/tsconfig.json
+task-management-app/tsconfig.spec.json
+task-management-app/.angular/
