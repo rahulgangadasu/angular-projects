@@ -1,8 +1,12 @@
 <div>
-  <button (click)="onUserClick()">
-    <img [src]="imagePath()" [alt]="selectedUser().name" />
-    <!-- property binding, sets the image source and alt text based on the selected user's avatar and name -->
-    <span>{{ selectedUser().name }}</span>
-    <!-- string interpolation, displays the user's name -->
+  <button (click)="onSelectedUser()">
+    <img [src]="imagePath" [alt]="name" />
+    <span>{{ name }}</span>
   </button>
 </div>
+
+<!-- Using Signal and Compute
+  <img [src]="imagePath()" [alt]="selectedUser().name" />
+  property binding, sets the image source and alt text based on the selected user's avatar and name 
+  <span>{{ selectedUser().name }}</span>
+  string interpolation, displays the user's name -->
