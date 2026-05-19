@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { DUMMY_USERS } from '../dummy-users';
 
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
@@ -9,21 +9,24 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
   styleUrl: './user.css',
 })
 export class User {
-  avatar = input.required<string>();
-  name = input.required<string>();
+  @Input({ required: true }) id!: string;
+  @Input({ required: true }) name!: string;
+  @Input({ required: true }) avatar!: string;
 
-  imagePath = computed(() => '/assets/users/' + this.avatar());
+  @Output() select = new EventEmitter<string>();
 
-  onSelectedUser() {}
+  get imagePath() {
+    return '/assets/users/' + this.avatar;
+  }
+  onSelectedUser() {
+    this.select.emit(this.id);
+  }
 }
 
 /* 
 -----> Component Inputs
   @Input({ required: true }) avatar!: string;
   @Input({ required: true }) name!: string;
-
-
-
 
 
 ------> Using Signals and Computed 
@@ -37,4 +40,16 @@ get selectedUserImage() {
 onUserClick() {
   const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
   this.selectedUser.set(DUMMY_USERS[randomIndex]);
+
+
+------> Using the new input() function, which is a part of Angular's new reactive system,
+ you can define component inputs in a more concise way.
+avatar = input.required<string>();
+  name = input.required<string>();
+
+  imagePath = computed(() => '/assets/users/' + this.avatar());
+
+
+-------> Using the new output() function, you can define component outputs in a more concise way.
+  select = output<string>();
  */
