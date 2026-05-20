@@ -1,11 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { DUMMY_USERS } from '../dummy-users';
-
-type UserType = {
-  id: string;
-  name: string;
-  avatar: string;
-};
+import { type UserType } from './user.model';
 
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 @Component({
@@ -16,6 +11,7 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 })
 export class User {
   @Input({ required: true }) user!: UserType;
+  @Input({ required: true }) selected!: boolean;
 
   @Output() select = new EventEmitter<string>();
 
