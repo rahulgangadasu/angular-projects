@@ -11,3 +11,12 @@ task-management-app/README.md
 task-management-app/tsconfig.json
 task-management-app/tsconfig.spec.json
 task-management-app/.angular/
+
+
+investment-calculator/node_modules/
+investment-calculator/.editorconfig
+investment-calculator/package-lock.json
+investment-calculator/package.json
+investment-calculator/README.md
+investment-calculator/tsconfig.json
+investment-calculator/tsconfig.spec.json
