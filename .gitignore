@@ -12,11 +12,14 @@ task-management-app/tsconfig.json
 task-management-app/tsconfig.spec.json
 task-management-app/.angular/
 
-
+investment-calculator/.vscode/
 investment-calculator/node_modules/
+investment-calculator/public/favicon.ico
 investment-calculator/.editorconfig
+investment-calculator/.prettierrc
 investment-calculator/package-lock.json
 investment-calculator/package.json
 investment-calculator/README.md
 investment-calculator/tsconfig.json
 investment-calculator/tsconfig.spec.json
+investment-calculator/.angular/
