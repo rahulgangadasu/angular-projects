@@ -1,27 +1,32 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { InvestmentData } from '../investment-input.model';
+import { InvestmentService } from '../investment-service';
 
 @Component({
   selector: 'app-user-input',
-  imports: [FormsModule],
+  standalone: false,
   templateUrl: './user-input.html',
   styleUrl: './user-input.css',
 })
 export class UserInput {
-  @Output() calculate = new EventEmitter<InvestmentData>();
+  enteredInitialInvestment = signal('0');
+  enteredAnnualInvestment = signal('0');
+  enteredExpectedReturn = signal('0');
+  enteredDuration = signal('0');
 
-  enteredInitialInvestment = '0';
-  enteredAnnualInvestment = '0';
-  enteredExpectedReturn = '5';
-  enteredDuration = '10';
+  constructor(private investmentService: InvestmentService) {}
 
   onSubmit() {
-    this.calculate.emit({
-      initialInvestment: +this.enteredInitialInvestment,
-      annualInvestment: +this.enteredAnnualInvestment,
-      expectedReturn: +this.enteredExpectedReturn,
-      duration: +this.enteredDuration,
+    this.investmentService.onCalculateInvestmentResults({
+      initialInvestment: +this.enteredInitialInvestment(),
+      annualInvestment: +this.enteredAnnualInvestment(),
+      expectedReturn: +this.enteredExpectedReturn(),
+      duration: +this.enteredDuration(),
     });
+
+    this.enteredInitialInvestment.set('0');
+    this.enteredAnnualInvestment.set('0');
+    this.enteredExpectedReturn.set('0');
+    this.enteredDuration.set('0');
   }
 }

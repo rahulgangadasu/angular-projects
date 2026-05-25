@@ -1,13 +1,15 @@
-import { Component, Input } from '@angular/core';
-import { ResultsModel } from '../results.model';
+import { Component, inject } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
+import { InvestmentService } from '../investment-service';
 
 @Component({
   selector: 'app-investment-results',
-  imports: [CurrencyPipe],
+  standalone: false,
   templateUrl: './investment-results.html',
   styleUrl: './investment-results.css',
 })
 export class InvestmentResults {
-  @Input() results?: ResultsModel[];
+  private investmentService = inject(InvestmentService);
+
+  results = this.investmentService.resultsData.asReadonly();
 }
