@@ -23,3 +23,15 @@ investment-calculator/README.md
 investment-calculator/tsconfig.json
 investment-calculator/tsconfig.spec.json
 investment-calculator/.angular/
+
+server-status-project/.vscode/
+server-status-project/node_modules/
+server-status-project/public/favicon.ico
+server-status-project/.editorconfig
+server-status-project/.prettierrc
+server-status-project/package-lock.json
+server-status-project/package.json
+server-status-project/README.md
+server-status-project/tsconfig.json
+server-status-project/tsconfig.spec.json
+server-status-project/.angular/
