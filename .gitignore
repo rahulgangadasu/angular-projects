@@ -35,3 +35,14 @@ server-design-project/README.md
 server-design-project/tsconfig.json
 server-design-project/tsconfig.spec.json
 server-design-project/.angular/
+
+lifecycle-deep-dive-start/node_modules/
+lifecycle-deep-dive-start/public/favicon.ico
+lifecycle-deep-dive-start/.editorconfig
+lifecycle-deep-dive-start/.prettierrc
+lifecycle-deep-dive-start/package-lock.json
+lifecycle-deep-dive-start/package.json
+lifecycle-deep-dive-start/README.md
+lifecycle-deep-dive-start/tsconfig.json
+lifecycle-deep-dive-start/tsconfig.spec.json
+lifecycle-deep-dive-start/.angular/
