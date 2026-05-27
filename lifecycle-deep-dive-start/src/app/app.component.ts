@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
-import { LifecycleComponent } from "./lifecycle/lifecycle.component";
+import { LifecycleComponent } from './lifecycle/lifecycle.component';
 
 @Component({
-    selector: 'app-root',
-    standalone: true,
-    templateUrl: './app.component.html',
-    imports: [LifecycleComponent]
+  selector: 'app-root',
+  standalone: true,
+  templateUrl: './app.component.html',
+  imports: [LifecycleComponent],
 })
 export class AppComponent {
   lifecycleComponentIsVisible = false;
