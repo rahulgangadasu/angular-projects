@@ -2,6 +2,8 @@ import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AuthService } from './auth.service';
+import { AuthDirective } from './auth-directive';
+import { LogDirective } from '../log.directive';
 
 @Component({
   selector: 'app-auth',
@@ -9,13 +11,16 @@ import { AuthService } from './auth.service';
   imports: [FormsModule],
   templateUrl: './auth.html',
   styleUrl: './auth.css',
+  hostDirectives: [LogDirective],
 })
-export class AuthComponent {
+export class Auth {
   email = signal('');
   password = signal('');
   private authService = inject(AuthService);
 
   onSubmit() {
     this.authService.authenticate(this.email(), this.password());
+    this.email.set('');
+    this.password.set('');
   }
 }

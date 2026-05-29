@@ -1,7 +1,16 @@
 <main>
-<!-- <app-learning-resources /> -->
+  <app-resources />
 
-  <hr />
+  <app-auth />
+  <!-- @if (isAdmin()) {
+    <p>Show this to admin!</p>
+  } -->
+  <!-- <p *ngIf="isAdmin()">Show this to admin!</p> -->
+  <!-- <ng-template appAuthDirective="admin">
+    <p>Show this to admin!</p>
+  </ng-template> -->
 
- <!-- <app-auth /> -->
+  <p *appAuthDirective="'admin'" class="protected-content admin">Show this to admin!</p>
+  <p *appAuthDirective="'guest'" class="protected-content unauthenticated">Show this to guests!</p>
+  <p *appAuthDirective="'user'" class="protected-content authenticated">Show this to users!</p>
 </main>
