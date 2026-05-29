@@ -60,5 +60,20 @@ custom-2w-binding-project/angular.json
 custom-2w-binding-project/tsconfig.app.json
 custom-2w-binding-project/.angular/
 
+custom-directives/node_modules/
+custom-directives/public/favicon.ico
+custom-directives/.editorconfig
+custom-directives/.prettierrc
+custom-directives/package-lock.json
+custom-directives/package.json
+custom-directives/README.md
+custom-directives/tsconfig.json
+custom-directives/tsconfig.spec.json
+custom-directives/.vscode/
+custom-directives/tsconfig.app.json
+custom-directives/.angular/
+custom-directives/angular.json
+
+
 
    
