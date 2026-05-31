@@ -75,5 +75,18 @@ custom-directives/.angular/
 custom-directives/angular.json
 
 
+temperatures-project/node_modules/
+temperatures-project/public/favicon.ico
+temperatures-project/.editorconfig  
+temperatures-project/.prettierrc
+temperatures-project/package-lock.json
+temperatures-project/package.json
+temperatures-project/README.md
+temperatures-project/tsconfig.json
+temperatures-project/tsconfig.spec.json
+temperatures-project/.vscode/
+temperatures-project/tsconfig.app.json
+temperatures-project/.angular/
+temperatures-project/angular.json
 
    
