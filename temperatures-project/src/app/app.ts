@@ -1,11 +1,17 @@
+import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
+import { TemperaturePipe } from './temperature.pipe';
+import { SortPipe } from './sort-pipe';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
+  imports: [DatePipe, TemperaturePipe, SortPipe],
 })
 export class App {
-  currentDate = new Date();
+  get currentDate() {
+    return new Date();
+  }
   currentTemperaturs = {
     berlin: 4.2749812,
     newYork: 18.1214,
@@ -17,5 +23,8 @@ export class App {
 
   onReset(index: number) {
     this.historicTemperatures[index] = 18;
+    // const newTemperatures = [...this.historicTemperatures];
+    // newTemperatures[index] = 18;
+    // this.historicTemperatures = newTemperatures;
   }
 }
