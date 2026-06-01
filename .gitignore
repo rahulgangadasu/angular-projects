@@ -89,4 +89,16 @@ temperatures-project/tsconfig.app.json
 temperatures-project/.angular/
 temperatures-project/angular.json
 
-   
+task-services-project/node_modules/
+task-services-project/public/favicon.ico
+task-services-project/.editorconfig
+task-services-project/.prettierrc
+task-services-project/package-lock.json
+task-services-project/package.json
+task-services-project/README.md
+task-services-project/tsconfig.json
+task-services-project/tsconfig.spec.json
+task-services-project/.vscode/
+task-services-project/tsconfig.app.json
+task-services-project/.angular/
+task-services-project/angular.json
