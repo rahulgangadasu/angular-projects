@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject, input } from '@angular/core';
+import { ChangeDetectorRef, Component, DestroyRef, inject, input, OnInit } from '@angular/core';
 import { MessagesService } from '../messages-service';
 
 @Component({
@@ -7,13 +7,22 @@ import { MessagesService } from '../messages-service';
   templateUrl: './messages-list.html',
   styleUrl: './messages-list.css',
 })
-export class MessagesList {
-  private messagesService = inject(MessagesService);
-  get messages() {
-    return this.messagesService.allMessages;
-  }
-
+export class MessagesList implements OnInit {
   private changeDetectorRef = inject(ChangeDetectorRef);
+  private messagesService = inject(MessagesService);
+  messages: string[] = [];
+  private destroyRef = inject(DestroyRef);
+
+  ngOnInit() {
+    const subscription = this.messagesService.messages$.subscribe((messages) => {
+      this.messages = messages;
+      this.changeDetectorRef.markForCheck();
+    });
+
+    this.destroyRef.onDestroy(() => {
+      subscription.unsubscribe();
+    });
+  }
 
   get debugOutput() {
     console.log('[MessagesList] "debugOutput" binding re-evaluated.');
