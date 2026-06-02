@@ -102,3 +102,17 @@ task-services-project/.vscode/
 task-services-project/tsconfig.app.json
 task-services-project/.angular/
 task-services-project/angular.json
+
+change-detection-project/node_modules/
+change-detection-project/public/favicon.ico
+change-detection-project/.editorconfig
+change-detection-project/.prettierrc
+change-detection-project/package-lock.json
+change-detection-project/package.json
+change-detection-project/README.md
+change-detection-project/tsconfig.json
+change-detection-project/tsconfig.spec.json
+change-detection-project/.vscode/
+change-detection-project/tsconfig.app.json
+change-detection-project/.angular/
+change-detection-project/angular.json
