@@ -116,3 +116,17 @@ change-detection-project/.vscode/
 change-detection-project/tsconfig.app.json
 change-detection-project/.angular/
 change-detection-project/angular.json
+
+rxjs-observables-project/node_modules/
+rxjs-observables-project/public/favicon.ico
+rxjs-observables-project/.editorconfig
+rxjs-observables-project/.prettierrc
+rxjs-observables-project/package-lock.json  
+rxjs-observables-project/package.json
+rxjs-observables-project/README.md
+rxjs-observables-project/tsconfig.json  
+rxjs-observables-project/tsconfig.spec.json
+rxjs-observables-project/.vscode/
+rxjs-observables-project/tsconfig.app.json
+rxjs-observables-project/.angular/
+rxjs-observables-project/angular.json   
