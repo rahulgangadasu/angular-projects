@@ -1,5 +1,6 @@
 Docs/
 
+#------------------------------- task-management-app------------------------------------
 task-management-app/.vscode/
 task-management-app/node_modules/
 task-management-app/public/favicon.ico
@@ -12,6 +13,7 @@ task-management-app/tsconfig.json
 task-management-app/tsconfig.spec.json
 task-management-app/.angular/
 
+#----------------------------------- investment-calculator------------------------------------
 investment-calculator/.vscode/
 investment-calculator/node_modules/
 investment-calculator/public/favicon.ico
@@ -24,6 +26,7 @@ investment-calculator/tsconfig.json
 investment-calculator/tsconfig.spec.json
 investment-calculator/.angular/
 
+#----------------------------------- server-design-project------------------------------------
 server-design-project/.vscode/
 server-design-project/node_modules/
 server-design-project/public/favicon.ico
@@ -36,6 +39,7 @@ server-design-project/tsconfig.json
 server-design-project/tsconfig.spec.json
 server-design-project/.angular/
 
+#----------------------------------- lifecycle-deep-dive-start------------------------------------
 lifecycle-deep-dive-start/node_modules/
 lifecycle-deep-dive-start/public/favicon.ico
 lifecycle-deep-dive-start/.editorconfig
@@ -46,6 +50,8 @@ lifecycle-deep-dive-start/README.md
 lifecycle-deep-dive-start/tsconfig.json
 lifecycle-deep-dive-start/tsconfig.spec.json
 lifecycle-deep-dive-start/.angular/
+
+#----------------------------------- custom-2w-binding-project------------------------------------
 
 custom-2w-binding-project/node_modules/
 custom-2w-binding-project/public/favicon.ico
@@ -60,6 +66,7 @@ custom-2w-binding-project/angular.json
 custom-2w-binding-project/tsconfig.app.json
 custom-2w-binding-project/.angular/
 
+#----------------------------------- custom-directives------------------------------------
 custom-directives/node_modules/
 custom-directives/public/favicon.ico
 custom-directives/.editorconfig
@@ -74,6 +81,7 @@ custom-directives/tsconfig.app.json
 custom-directives/.angular/
 custom-directives/angular.json
 
+#----------------------------------- temperatures-project------------------------------------
 
 temperatures-project/node_modules/
 temperatures-project/public/favicon.ico
@@ -89,6 +97,7 @@ temperatures-project/tsconfig.app.json
 temperatures-project/.angular/
 temperatures-project/angular.json
 
+#----------------------------------- task-services-project------------------------------------
 task-services-project/node_modules/
 task-services-project/public/favicon.ico
 task-services-project/.editorconfig
@@ -103,6 +112,7 @@ task-services-project/tsconfig.app.json
 task-services-project/.angular/
 task-services-project/angular.json
 
+#----------------------------------- change-detection-project------------------------------------
 change-detection-project/node_modules/
 change-detection-project/public/favicon.ico
 change-detection-project/.editorconfig
@@ -117,6 +127,7 @@ change-detection-project/tsconfig.app.json
 change-detection-project/.angular/
 change-detection-project/angular.json
 
+#----------------------------------- rxjs-observables-project------------------------------------
 rxjs-observables-project/node_modules/
 rxjs-observables-project/public/favicon.ico
 rxjs-observables-project/.editorconfig
@@ -130,3 +141,20 @@ rxjs-observables-project/.vscode/
 rxjs-observables-project/tsconfig.app.json
 rxjs-observables-project/.angular/
 rxjs-observables-project/angular.json   
+
+#----------------------------------- tourist-places-project------------------------------------
+tourist-places-project/node_modules/
+tourist-places-project/public/favicon.ico
+tourist-places-project/.editorconfig
+tourist-places-project/.prettierrc
+tourist-places-project/package-lock.json
+tourist-places-project/package.json
+tourist-places-project/README.md
+tourist-places-project/tsconfig.json
+tourist-places-project/tsconfig.spec.json
+tourist-places-project/.vscode/
+tourist-places-project/tsconfig.app.json
+tourist-places-project/.angular/
+tourist-places-project/angular.json
+tourist-places-project/backend
+
