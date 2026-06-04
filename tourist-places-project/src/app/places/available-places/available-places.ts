@@ -1,9 +1,10 @@
 import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 import { Place } from '../place.model';
 import { Places } from '../places';
 import { PlacesContainer } from '../places-container/places-container';
-import { HttpClient } from '@angular/common/http';
-import { catchError, map, throwError } from 'rxjs';
+import { PlacesService } from '../places.service';
 
 @Component({
   selector: 'app-available-places',
@@ -12,8 +13,8 @@ import { catchError, map, throwError } from 'rxjs';
   styleUrl: './available-places.css',
 })
 export class AvailablePlaces implements OnInit {
-  private httpClient = inject(HttpClient);
   private destroyRef = inject(DestroyRef);
+  private placesService = inject(PlacesService);
 
   places = signal<Place[] | undefined>(undefined);
   isFetching = signal(false);
@@ -24,50 +25,39 @@ export class AvailablePlaces implements OnInit {
   ngOnInit() {
     this.isFetching.set(true);
 
-    const subscription = this.httpClient
-      .get<{ places: Place[] }>('http://localhost:3000/places') //,{observe: 'response',//observe: 'events',}
-      .pipe(
-        map((responseData) => responseData.places),
-        catchError((error) => {
-          console.log(error);
-          return throwError(() => new Error('Something went wrong!'));
-        }),
-      )
-      .subscribe({
-        next: (places) => {
-          this.places.set(places);
-        },
-        // next: (event) => {
-        //   console.log(event);
-        // },
-        // next: (response) => {
-        //   console.log(response.body?.places);
-        // },
-        complete: () => {
-          this.isFetching.set(false);
-        },
-        error: (err: Error) => {
-          this.error.set(err.message);
-        },
-      });
+    const subscription = this.placesService.loadAvailablePlaces().subscribe({
+      next: (places) => {
+        this.places.set(places);
+      },
+      // next: (event) => {
+      //   console.log(event);
+      // },
+      // next: (response) => {
+      //   console.log(response.body?.places);
+      // },
+      complete: () => {
+        this.isFetching.set(false);
+      },
+      error: (err: Error) => {
+        this.error.set(err.message);
+      },
+    });
+
+    this.destroyRef.onDestroy(() => {
+      subscription.unsubscribe();
+      console.log('available places component destroyed');
+    });
+  }
+
+  onSelectPlace(selectedPlace: Place) {
+    const subscription = this.placesService.addPlaceToUserPlaces(selectedPlace).subscribe({
+      next: (responseData) => {
+        console.log(responseData);
+      },
+    });
 
     this.destroyRef.onDestroy(() => {
       subscription.unsubscribe();
     });
-  }
-  onSelectPlace(selectedPlace: Place) {
-    this.httpClient
-      .put('http://localhost:3000/user-places', {
-        placeId: selectedPlace.id,
-        title: selectedPlace.title,
-      })
-      .subscribe({
-        next: (responseData) => {
-          console.log(responseData);
-        },
-        complete: () => {
-          console.log('complete');
-        },
-      });
   }
 }
