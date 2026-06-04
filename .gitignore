@@ -158,3 +158,16 @@ tourist-places-project/.angular/
 tourist-places-project/angular.json
 tourist-places-project/backend
 
+managing-forms-project/node_modules/
+managing-forms-project/public/favicon.ico
+managing-forms-project/.editorconfig
+managing-forms-project/.prettierrc
+managing-forms-project/package-lock.json
+managing-forms-project/package.json
+managing-forms-project/README.md
+managing-forms-project/tsconfig.json
+managing-forms-project/tsconfig.spec.json
+managing-forms-project/.vscode/
+managing-forms-project/tsconfig.app.json
+managing-forms-project/.angular/
+managing-forms-project/angular.json
