@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { catchError, map, tap, throwError } from 'rxjs';
 
 import { Place } from './place.model';
+import { ErrorService } from '../shared/error.service';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,7 @@ import { Place } from './place.model';
 export class PlacesService {
   private userPlaces = signal<Place[]>([]);
   private httpClient = inject(HttpClient);
+  private errorService = inject(ErrorService);
 
   loadedUserPlaces = this.userPlaces.asReadonly();
 
@@ -20,6 +22,7 @@ export class PlacesService {
       'Something went wrong fetching available places!',
     );
   }
+
   loadUserPlaces() {
     return this.fetchPlaces(
       'http://localhost:3000/user-places',
@@ -36,7 +39,7 @@ export class PlacesService {
   addPlaceToUserPlaces(selectedPlace: Place) {
     const prevPlaces = this.userPlaces();
 
-    if (prevPlaces.some((place) => place.id === selectedPlace.id)) {
+    if (!prevPlaces.some((place) => place.id === selectedPlace.id)) {
       this.userPlaces.set([...prevPlaces, selectedPlace]);
     }
 
@@ -47,12 +50,27 @@ export class PlacesService {
       .pipe(
         catchError((error) => {
           this.userPlaces.set(prevPlaces);
+          this.errorService.showError('Failed to add place to favorites!');
           return throwError(() => new Error('Failed to add place to favorites!'));
         }),
       );
   }
 
-  removeUserPlace(place: Place) {}
+  removeUserPlace(selectedPlace: Place) {
+    const prevPlaces = this.userPlaces();
+
+    if (prevPlaces.some((place) => place.id === selectedPlace.id)) {
+      this.userPlaces.set(prevPlaces.filter((place) => place.id !== selectedPlace.id));
+    }
+
+    return this.httpClient.delete(`http://localhost:3000/user-places/${selectedPlace.id}`).pipe(
+      catchError((error) => {
+        this.userPlaces.set(prevPlaces);
+        this.errorService.showError('Failed to remove place from favorites!');
+        return throwError(() => new Error('Failed to remove place from favorites!'));
+      }),
+    );
+  }
 
   private fetchPlaces(url: string, errorMessage: string) {
     return this.httpClient.get<{ places: Place[] }>(url).pipe(

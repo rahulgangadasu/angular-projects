@@ -1,9 +1,9 @@
 import { Component, DestroyRef, inject, signal } from '@angular/core';
 
 import { Places } from '../places';
-import { Place } from '../place.model';
 import { PlacesService } from '../places.service';
 import { PlacesContainer } from '../places-container/places-container';
+import { Place } from '../place.model';
 
 @Component({
   selector: 'app-user-places',
@@ -30,6 +30,15 @@ export class UserPlaces {
         this.error.set(err.message);
       },
     });
+
+    this.destroyRef.onDestroy(() => {
+      subscription.unsubscribe();
+      console.log('user places component destroyed');
+    });
+  }
+
+  onRemovePlace(selectedPlace: Place) {
+    const subscription = this.placesService.removeUserPlace(selectedPlace).subscribe();
 
     this.destroyRef.onDestroy(() => {
       subscription.unsubscribe();
