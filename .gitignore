@@ -158,6 +158,7 @@ tourist-places-project/.angular/
 tourist-places-project/angular.json
 tourist-places-project/backend
 
+#----------------------------------- managing-forms-project------------------------------------
 managing-forms-project/node_modules/
 managing-forms-project/public/favicon.ico
 managing-forms-project/.editorconfig
@@ -171,3 +172,18 @@ managing-forms-project/.vscode/
 managing-forms-project/tsconfig.app.json
 managing-forms-project/.angular/
 managing-forms-project/angular.json
+
+#----------------------------------- routing-project------------------------------------
+routing-project/node_modules
+routing-project/public/favicon.ico
+routing-project/.editorconfig
+routing-project/.prettierrc
+routing-project/package-lock.json
+routing-project/package.json
+routing-project/README.md
+routing-project/tsconfig.json
+routing-project/tsconfig.spec.json
+routing-project/.vscode
+routing-project/tsconfig.app.json
+routing-project/.angular
+routing-project/angular.json
