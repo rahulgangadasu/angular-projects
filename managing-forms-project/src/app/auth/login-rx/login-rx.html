@@ -14,4 +14,11 @@
 
     <button class="button">Login</button>
   </div>
+
+  @if (isEmailValid) {
+    <p class="control-error">please enter valid email id!</p>
+  }
+  @if (isPasswordValid) {
+    <p class="control-error">password must be at least 6 characters long and contain a ?</p>
+  }
 </form>
