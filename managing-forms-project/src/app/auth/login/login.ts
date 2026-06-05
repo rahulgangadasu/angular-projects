@@ -14,7 +14,7 @@ export class Login {
 
   constructor() {
     afterNextRender(() => {
-      const savedEmail = window.localStorage.getItem('saved-login-form');
+      const savedEmail = window.localStorage.getItem('saved-login-email');
       if (savedEmail) {
         const loadedEmail = JSON.parse(savedEmail);
         const saveEmail = loadedEmail.email;
