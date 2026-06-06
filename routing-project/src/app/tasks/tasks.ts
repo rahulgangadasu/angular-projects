@@ -10,6 +10,6 @@ import { TaskModel } from './task/task.model';
   styleUrl: './tasks.css',
   imports: [Task],
 })
-export class TasksComponent {
+export class Tasks {
   userTasks: TaskModel[] = [];
 }
