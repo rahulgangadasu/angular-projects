@@ -10,7 +10,7 @@ import { TasksService } from '../tasks.service';
   templateUrl: './new-task.html',
   styleUrl: './new-task.css',
 })
-export class NewTaskComponent {
+export class NewTask {
   userId = input.required<string>();
   enteredTitle = signal('');
   enteredSummary = signal('');
@@ -24,7 +24,7 @@ export class NewTaskComponent {
         summary: this.enteredSummary(),
         date: this.enteredDate(),
       },
-      this.userId()
+      this.userId(),
     );
   }
 }
