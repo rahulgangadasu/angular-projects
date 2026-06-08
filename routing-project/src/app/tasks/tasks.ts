@@ -1,5 +1,6 @@
-import { Component, computed, inject, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, computed, DestroyRef, inject, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { combineLatest } from 'rxjs';
 
 import { Task } from './task/task';
 import { TasksService } from './tasks.service';
@@ -9,19 +10,38 @@ import { TasksService } from './tasks.service';
   standalone: true,
   templateUrl: './tasks.html',
   styleUrl: './tasks.css',
-  imports: [Task],
+  imports: [Task, RouterLink],
 })
 export class Tasks implements OnInit {
   private acivatedRoute = inject(ActivatedRoute);
   private tasksService = inject(TasksService);
-  userId = '';
+  private destroyRef = inject(DestroyRef);
 
+  userId = '';
+  order?: 'asc' | 'desc';
+
+  // order = input.required<'asc' | 'desc'>();
   // userId = input.required<string>();
   ngOnInit(): void {
-    this.acivatedRoute.paramMap.subscribe({
+    // combineLatest([this.acivatedRoute.paramMap, this.acivatedRoute.queryParams]).subscribe({
+    //   next: ([paramMap, queryParams]) => {
+    //     this.userId = paramMap.get('userId') || '';
+    //     this.order = queryParams['order'];
+    //   },
+    // });
+
+    const idSubscription = this.acivatedRoute.paramMap.subscribe({
       next: (paramMap) => {
         this.userId = paramMap.get('userId') || '';
       },
+    });
+    const orderSubscription = this.acivatedRoute.queryParams.subscribe({
+      next: (params) => (this.order = params['order']),
+    });
+
+    this.destroyRef.onDestroy(() => {
+      idSubscription.unsubscribe();
+      orderSubscription.unsubscribe();
     });
   }
 
