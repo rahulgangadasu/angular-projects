@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { NoTask } from './tasks/no-task/no-task';
-import { resolveUserName, UserTasks } from './users/user-tasks/user-tasks';
+import { resolveTitle, resolveUserName, UserTasks } from './users/user-tasks/user-tasks';
 import { routes as userRoutes } from './users/users.routes';
 import { NotFound } from './not-found/not-found';
 
@@ -20,6 +20,7 @@ export const routes: Routes = [
     resolve: {
       userName: resolveUserName,
     },
+    title: resolveTitle,
   },
   {
     path: '**',

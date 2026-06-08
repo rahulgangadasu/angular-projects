@@ -48,6 +48,10 @@ export const resolveUserName: ResolveFn<string> = (
   );
 };
 
+export const resolveTitle: ResolveFn<string> = (activatedRoute, routerState) => {
+  return resolveUserName(activatedRoute, routerState) + ' - Tasks';
+};
+
 /*--------extracting data from routes using withComponentInputBinding() as providerRouter(routes, withComponentInputBinding())
 userId = input.required<string>();
 private userService = inject(UsersService);
