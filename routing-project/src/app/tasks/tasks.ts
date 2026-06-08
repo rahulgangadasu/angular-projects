@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { Task } from './task/task';
-import { TaskModel } from './task/task.model';
+import { TasksService } from './tasks.service';
 
 @Component({
   selector: 'app-tasks',
@@ -10,6 +11,21 @@ import { TaskModel } from './task/task.model';
   styleUrl: './tasks.css',
   imports: [Task],
 })
-export class Tasks {
-  userTasks: TaskModel[] = [];
+export class Tasks implements OnInit {
+  private acivatedRoute = inject(ActivatedRoute);
+  private tasksService = inject(TasksService);
+  userId = '';
+
+  // userId = input.required<string>();
+  ngOnInit(): void {
+    this.acivatedRoute.paramMap.subscribe({
+      next: (paramMap) => {
+        this.userId = paramMap.get('userId') || '';
+      },
+    });
+  }
+
+  userTasks = computed(() =>
+    this.tasksService.allTasks().filter((task) => task.userId === this.userId),
+  );
 }
