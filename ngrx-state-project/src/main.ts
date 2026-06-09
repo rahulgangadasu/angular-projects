@@ -1,4 +1,9 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { App } from './app/app';
+import { provideStore } from '@ngrx/store';
 
-bootstrapApplication(App).catch((err) => console.error(err));
+import { App } from './app/app';
+import { counterReducer } from './app/store/counter.reducer';
+
+bootstrapApplication(App, {
+  providers: [provideStore({ counter: counterReducer })],
+}).catch((err) => console.error(err));
