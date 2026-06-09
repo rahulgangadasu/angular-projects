@@ -206,3 +206,18 @@ deferrable-views-project/angular.json
 
 .github/
 node_modules/
+
+
+ngrx-state-project/node_modules
+ngrx-state-project/public/favicon.ico
+ngrx-state-project/.editorconfig
+ngrx-state-project/.prettierrc  
+ngrx-state-project/package-lock.json
+ngrx-state-project/package.json
+ngrx-state-project/README.md
+ngrx-state-project/tsconfig.json    
+ngrx-state-project/tsconfig.spec.json
+ngrx-state-project/.vscode
+ngrx-state-project/tsconfig.app.json
+ngrx-state-project/.angular
+ngrx-state-project/angular.json
