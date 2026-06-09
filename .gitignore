@@ -187,3 +187,18 @@ routing-project/.vscode
 routing-project/tsconfig.app.json
 routing-project/.angular
 routing-project/angular.json
+
+#----------------------------------- deferrable-views-project------------------------------------
+deferrable-views-project/node_modules
+deferrable-views-project/public/favicon.ico
+deferrable-views-project/.editorconfig
+deferrable-views-project/.prettierrc
+deferrable-views-project/package-lock.json
+deferrable-views-project/package.json
+deferrable-views-project/README.md
+deferrable-views-project/tsconfig.json
+deferrable-views-project/tsconfig.spec.json
+deferrable-views-project/.vscode
+deferrable-views-project/tsconfig.app.json
+deferrable-views-project/.angular
+deferrable-views-project/angular.json

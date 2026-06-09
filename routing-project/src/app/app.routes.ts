@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 
 import { NoTask } from './tasks/no-task/no-task';
 import { resolveTitle, resolveUserName, UserTasks } from './users/user-tasks/user-tasks';
-import { routes as userRoutes } from './users/users.routes';
 import { NotFound } from './not-found/not-found';
 
 export const routes: Routes = [
@@ -13,7 +12,7 @@ export const routes: Routes = [
   {
     path: 'users/:userId',
     component: UserTasks,
-    children: userRoutes,
+    loadChildren: () => import('./users/users.routes').then((m) => m.routes),
     data: {
       message: 'Hello Angular Developer!',
     },
