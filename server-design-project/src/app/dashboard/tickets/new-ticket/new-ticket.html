@@ -1,0 +1,17 @@
+<form (ngSubmit)="onSubmit()">
+  <label>
+    <span>Title</span>
+    <input type="text" name="title" [(ngModel)]="title" placeholder="Ticket title" />
+  </label>
+
+  <label>
+    <span>Description</span>
+    <textarea
+      name="ticketText"
+      [(ngModel)]="ticketText"
+      placeholder="Describe the request"
+    ></textarea>
+  </label>
+
+  <button type="submit">Add Ticket</button>
+</form>

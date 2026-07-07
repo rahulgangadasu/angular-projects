@@ -5,6 +5,7 @@ import { Ticket } from './ticket/ticket';
 
 @Component({
   selector: 'app-tickets',
+  standalone: true,
   imports: [NewTicket, Ticket],
   templateUrl: './tickets.html',
   styleUrl: './tickets.css',
